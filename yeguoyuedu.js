@@ -24,3 +24,4 @@ if (body) {
 //   },
 //   "code" : 200
 // }
+// https://mlol\.qt\.qq\.com/go/mine/card/get_list url response-body "sumMatchNum": "(.*)", response-body "sumMatchNum": "99999",
