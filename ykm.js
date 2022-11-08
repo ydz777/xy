@@ -1,8 +1,16 @@
-var body = $response.body
-var url = $request.url
+// $prefs is for persistent store and the data of $prefs will be cleared when Quantumult X is deleted.
+// $prefs.setValueForKey(value, key), $prefs.removeValueForKey(key), $prefs.removeAllValues(). Returns true or false, value and key should be string.
+// $prefs.valueForKey(key) returns value.
 
-if (body) {
-  console.log(body)
+var body = $response.body
+
+let val = $prefs.valueForKey('ykmVal')
+
+if (val) {
+  console.log('val', val)
+  $done(val)
 } else {
-  $done({})
+  $prefs.setValueForKey(body, 'ykmVal')
+  console.log('body', body)
+  $done(body)
 }
