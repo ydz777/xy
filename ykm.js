@@ -3,14 +3,10 @@
 // $prefs.valueForKey(key) returns value.
 
 var body = $response.body
+var obj = JSON.parse(body)
+obj.data.encode = ''
+body = JSON.stringify(obj)
 
-let val = $prefs.valueForKey('ykmVal')
+console.log(body)
 
-if (val) {
-  console.log('val', val)
-  $done(val)
-} else {
-  $prefs.setValueForKey(body, 'ykmVal')
-  console.log('body', body)
-  $done(body)
-}
+$done(body)
